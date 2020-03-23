@@ -1,14 +1,14 @@
 import React from 'react'
 import {
-    Flex, Image, Box
+    Flex, Image, Box, Badge
   } from '@chakra-ui/core';
 
 
-function CharacterCard(){
+function CharacterCard(props){
 return(
     <Box  p="10px" objectFit="cover" maxW="sm" borderWidth="1px" borderColor="footfeet.100" rounded="lg" overflow="hidden">
      <Image 
-     src={`https://rickandmortyapi.com/api/character${props.characters.Image}`} alt="movie_poster" 
+     src={props.characters.image} alt="character_image" 
      objectFit="cover"
      rounded="md"
      />
@@ -20,8 +20,9 @@ return(
           
         </Flex>
 
-        <Box
+        <Flex
           mt="1"
+          justify="center"
           color="white"
           fontWeight="semibold"
           as="h5"
@@ -29,7 +30,7 @@ return(
           isTruncated
         >
           {props.characters.name}
-        </Box>
+        </Flex>
         <Flex justify="center" mt="2" alignItems="center">
           
           <Box  isTruncated as="span" ml="2" color="gray.600" fontSize="sm">
