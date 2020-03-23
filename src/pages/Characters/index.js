@@ -9,13 +9,13 @@ class Characters extends Component{
   }
 
     render(){
-        return(
-            <Stack 
+      return(
+        <Stack 
             w="100vw"
             bg="yankeesblue.100"
             >
-                < EpisodeList characters={this.state.allCharacters}/>
-            </Stack>
+            < EpisodeList characters={this.state.allCharacters}/>
+        </Stack>
         )
  
     }

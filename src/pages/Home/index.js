@@ -7,20 +7,20 @@ import axios from 'axios'
 
 class Home extends Component{
     state = {
-        lastCharacters: [],
-        lastEpisodes: []
+        recentCharacters: [],
+        recentEpisodes: []
     }
 
 async getCharacters(){
    const data = await axios.get('https://rickandmortyapi.com/api/character')
     console.log(data)
-   this.setState({lastCharacters: data.data.results})
-   console.log(this.state.characters)
+   this.setState({recentCharacters: data.data.results})
+   console.log(this.state.recentCharacters)
 }
 
 async getLastEpisodes(){
    const data = await axios.get('https://rickandmortyapi.com/api/episode') 
-   this.setState({lastEpisodes: data.data.results}) 
+   this.setState({recentEpisodes: data.data.results}) 
 }
 
 componentDidMount(){
@@ -39,12 +39,12 @@ bg="yankeesblue.100"
 < Text
 color="white"
 >Last Episodes</Text>
-< EpisodeList lastEpisodes={this.state.lastEpisodes}/>
+< EpisodeList episodes={this.state.recentEpisodes}/>
 < Text
 mt="100px"
 color="white"
 >Last Characters</Text>
-{this.state.lastCharacters?<CharacterList characters={this.state.lastCharacters}/>:null}
+{this.state.recentCharacters?<CharacterList characters={this.state.recentCharacters}/>:null}
 </Stack>
 </>
 )
