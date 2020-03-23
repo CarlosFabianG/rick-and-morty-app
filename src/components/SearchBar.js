@@ -10,6 +10,6 @@ class SearchBar extends Component {
       </Flex>
     )
   }
-};
+}
 
 export default SearchBar
