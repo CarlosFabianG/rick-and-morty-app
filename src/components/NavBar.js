@@ -27,7 +27,8 @@ function NavBar(){
         <Flex justify="center" >
             <Image src="../rick_and_morty_logo.png"
             w="250px"
-            p="45px"
+            p="55px 55px 55px 20px"
+            objectFit="cover"
             />
             </Flex>
             </Link>

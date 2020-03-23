@@ -7,14 +7,14 @@ import axios from 'axios'
 
 class Home extends Component{
     state = {
-        characters: [],
+        lastCharacters: [],
         lastEpisodes: []
     }
 
 async getCharacters(){
    const data = await axios.get('https://rickandmortyapi.com/api/character')
     console.log(data)
-   this.setState({characters: data.data.results})
+   this.setState({lastCharacters: data.data.results})
    console.log(this.state.characters)
 }
 
@@ -44,7 +44,7 @@ color="white"
 mt="100px"
 color="white"
 >Last Characters</Text>
-{this.state.characters?<CharacterList lastCharacters={this.state.characters}/>:null}
+{this.state.lastCharacters?<CharacterList characters={this.state.lastCharacters}/>:null}
 </Stack>
 </>
 )
