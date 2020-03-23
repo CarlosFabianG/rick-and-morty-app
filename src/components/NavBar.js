@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { Link } from 'react-router-dom'
 import {
-  Flex, Text
-} from '@chakra-ui/core';
+  Flex, Image
+} from '@chakra-ui/core'
 
 
 function NavBar(){
@@ -16,20 +16,20 @@ function NavBar(){
             h="10vh"
             p={0}
             align="center"
-            justify="space-between"
+            justify="center"
             borderBottom="1px"
             borderRadius="md" 
             borderColor="footfeet.100"
         >
         
         <Link to={'/'}>
-             <Text
-              color="green.100" 
-              fontSize="xl" 
-              w={"12vw", "5vw", "8vw"} 
-              ml="1vw" 
-              fontWeight="bolder"
-             >Rick and Morty</Text> 
+
+        <Flex justify="center" >
+            <Image src="../rick_and_morty_logo.png"
+            w="250px"
+            p="45px"
+            />
+            </Flex>
             </Link>
         </Flex>
     )
