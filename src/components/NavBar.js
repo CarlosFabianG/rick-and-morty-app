@@ -16,7 +16,7 @@ function NavBar(){
             h="10vh"
             p={0}
             align="center"
-            justify="center"
+            justify="flex-start"
             borderBottom="1px"
             borderRadius="md" 
             borderColor="footfeet.100"

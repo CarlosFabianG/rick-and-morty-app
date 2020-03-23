@@ -28,7 +28,6 @@ componentDidMount(){
     this.getLastEpisodes()
 }
    
-
     render(){
 return (
     <>
@@ -37,7 +36,14 @@ w="100vw"
 bg="yankeesblue.100"
 >
 < SearchBar />
+< Text
+color="white"
+>Last Episodes</Text>
 < EpisodeList lastEpisodes={this.state.lastEpisodes}/>
+< Text
+mt="100px"
+color="white"
+>Last Characters</Text>
 {this.state.characters?<CharacterList lastCharacters={this.state.characters}/>:null}
 </Stack>
 </>

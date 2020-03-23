@@ -15,7 +15,7 @@ return(
      <Box p="6">
         <Flex d="flex" alignItems="baseline" justify="center">
           <Badge justify="center" rounded="full" px="2" variantColor="teal">
-            Rating:{props.characters.status}
+            {props.characters.status}
           </Badge>
           
         </Flex>
