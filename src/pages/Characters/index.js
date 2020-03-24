@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Stack } from "@chakra-ui/core"
+import { Link } from 'react-router-dom'
+import { Stack, Text } from "@chakra-ui/core"
 import CharacterList from '../../components/CharacterList'
 import axios from 'axios'
 const baseUrl= 'https://rickandmortyapi.com/api/'
@@ -27,6 +28,9 @@ this.getAllCharacters()
             bg="yankeesblue.100"
             >
             < CharacterList characters={this.state.allCharacters}/>
+            <Link>
+               <Text>Next page</Text>
+            </Link>
         </Stack>
         )
  
