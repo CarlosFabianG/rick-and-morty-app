@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Stack, Text } from "@chakra-ui/core"
 import CharacterList from '../../components/CharacterList'
+import SearchBar from '../../components/SearchBar'
 import axios from 'axios'
 const baseUrl= 'https://rickandmortyapi.com/api/'
 
@@ -27,6 +28,7 @@ this.getAllCharacters()
             w="100vw"
             bg="yankeesblue.100"
             >
+              < SearchBar />
             < CharacterList characters={this.state.allCharacters}/>
             <Link>
                <Text>Next page</Text>

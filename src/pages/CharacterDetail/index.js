@@ -37,7 +37,7 @@ class CharacterDetail extends Component {
             bg="yankeesblue.100"
             >
             <Flex ml="10vw" mt="20vh">
-<Flex>
+<Flex wrap="wrap">
 <Image
 src={this.state.characterInfo.image}
 border="1px"
@@ -60,7 +60,7 @@ borderColor="footfeet.100"
 <Text color="white">
 <Box as="span" fontWeight="bold">Location:</Box> {this.state.characterInfo.location.name}
 </Text>
-<Text color="white">
+<Text color="gray.500">
 <Box as="span" fontWeight="bold">Nº episodes:</Box> {this.state.characterInfo.episode.length}
 </Text>
     <Badge rounded="full" px="2" variantColor="teal">

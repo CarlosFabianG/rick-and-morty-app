@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Stack, Text } from "@chakra-ui/core"
 import EpisodeList from '../../components/EpisodeList'
+import SearchBar from '../../components/SearchBar'
 import axios from 'axios'
 const baseUrl = 'https://rickandmortyapi.com/api/'
 
@@ -35,7 +36,9 @@ this.getAllEpisodes()
         w="100vw"
         bg="yankeesblue.100"
         >
+            < SearchBar />
             < EpisodeList episodes={this.state.allEpisodes} />
+            
             <Link to={`${baseUrl}episode?page=2`}>
                <Text color="white">Next page</Text>
             </Link>

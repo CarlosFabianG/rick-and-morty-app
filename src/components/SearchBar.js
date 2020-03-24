@@ -5,9 +5,19 @@ class SearchBar extends Component {
   render () {
     return (
       <Flex justify='center' mt="15vh" pt='20px'>
-        <Input bg='yankeesblue.100' borderColor='green.300' placeholder='Search for characters and episodes' w='50vw' />
-        <IconButton bg='yankeesblue.100' border='1px' color='green.300' borderColor='green.300' aria-label='Search database' icon='search' />
-      </Flex>
+        <Input 
+            bg='yankeesblue.100' 
+            borderColor='green.300' 
+            placeholder='Search for characters and episodes' 
+            w='50vw' />
+          <IconButton 
+            bg='yankeesblue.100' 
+            border='1px' 
+            color='green.300' 
+            borderColor='green.300' 
+            aria-label='Search database' 
+            icon='search' />
+          </Flex>
     )
   }
 }

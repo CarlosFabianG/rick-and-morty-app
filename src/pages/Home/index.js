@@ -4,6 +4,7 @@ import CharacterList from '../../components/CharacterList'
 import EpisodeList from '../../components/EpisodeList'
 import SearchBar from '../../components/SearchBar'
 import axios from 'axios'
+const baseUrl = 'https://rickandmortyapi.com/api/'
 
 class Home extends Component{
     state = {
@@ -12,14 +13,14 @@ class Home extends Component{
     }
 
 async getCharacters(){
-   const data = await axios.get('https://rickandmortyapi.com/api/character')
+   const data = await axios.get(`${baseUrl}/character`)
     console.log(data)
    this.setState({recentCharacters: data.data.results})
    console.log(this.state.recentCharacters)
 }
 
 async getLastEpisodes(){
-   const data = await axios.get('https://rickandmortyapi.com/api/episode') 
+   const data = await axios.get(`${baseUrl}/episode`) 
    this.setState({recentEpisodes: data.data.results}) 
 }
 

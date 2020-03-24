@@ -33,8 +33,8 @@ return(
         </Flex>
         <Flex justify="center" mt="2" alignItems="center">
           
-          <Box  isTruncated as="span" ml="2" color="gray.600" fontSize="sm">
-            {props.characters.name}min
+          <Box as="span" ml="2" color="gray.600" fontSize="sm">
+            {props.characters.species}
           </Box>
         </Flex>
       </Box>
