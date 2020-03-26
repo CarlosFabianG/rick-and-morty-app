@@ -11,8 +11,10 @@ class CharacterDetail extends Component {
        origin: [],
        location: [],
        episode: []
-        }
+        },
+        episodeinfo: []
     }
+
 
     async getCharacterInfo(){
         const {id} = this.props.match.params
@@ -20,13 +22,15 @@ class CharacterDetail extends Component {
        
         console.log(data)
         this.setState( {characterInfo: data.data} )
-        console.log(this.state.characterInfo)
+        console.log(this.state.characterInfo.episode)
        
     }
 
     componentDidMount(){
         this.getCharacterInfo()
     }
+
+     
 
     render(){
         

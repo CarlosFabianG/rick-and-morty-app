@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import { Stack, Text } from "@chakra-ui/core"
 import CharacterList from '../../components/CharacterList'
 import EpisodeList from '../../components/EpisodeList'
@@ -46,6 +47,7 @@ mt="100px"
 color="white"
 >Last Characters</Text>
 {this.state.recentCharacters?<CharacterList characters={this.state.recentCharacters}/>:null}
+<Link to={'/characters'}><Text color="white">See all characters</Text></Link>
 </Stack>
 </>
 )
