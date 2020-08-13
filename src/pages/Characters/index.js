@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+//import { Link } from 'react-router-dom'
 import { Stack, Flex, Button, Spinner, Text } from "@chakra-ui/core"
 import CharacterList from '../../components/CharacterList'
 import SearchBar from '../../components/SearchBar'
