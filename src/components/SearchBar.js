@@ -9,6 +9,7 @@ class SearchBar extends Component {
             bg='yankeesblue.100' 
             borderColor='green.300' 
             placeholder='Search for characters and episodes' 
+            color='white'
             w='50vw' />
           <IconButton 
             bg='yankeesblue.100' 

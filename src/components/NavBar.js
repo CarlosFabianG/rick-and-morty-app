@@ -16,7 +16,7 @@ function NavBar(){
             h="10vh"
             p={0}
             align="center"
-            justify="flex-start"
+            justify="space-between"
             borderBottom="1px"
             borderRadius="md" 
             borderColor="footfeet.100"
@@ -32,6 +32,14 @@ function NavBar(){
             />
             </Flex>
             </Link>
+            <Flex 
+                color="white"
+                width="30vw"
+                justify="space-around">
+                <Link to={'/characters'}>Characters</Link>
+                <Link to={'/episodes'}>Episodes</Link>
+                <Link>Locations</Link>
+            </Flex>
         </Flex>
     )
 }
