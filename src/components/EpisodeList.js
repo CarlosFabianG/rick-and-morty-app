@@ -12,9 +12,9 @@ function EpisodeList(props){
     return(
         <SimpleGrid m="10px" mt='10vh' minChildWidth="300px" justify='center' columns={[1, 2, 3]} spacing={10}>
           
-         {props.episodes.map(episode => <Link to={`/episodes/${episode.id}`}><EpisodeCard key={episode.id} episodes={episode}/> </Link>)}
+         {props.episodes.map(episode => <Link to={`episodes/${episode.id}`} key={episode.id}><EpisodeCard  episodes={episode}/> </Link>)}
           
-    </SimpleGrid>
+        </SimpleGrid>
     )
 
 }
