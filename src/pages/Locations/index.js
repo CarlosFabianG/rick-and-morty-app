@@ -33,7 +33,7 @@ const Locations = () => {
            
             />
           </Flex> }
-        <EpisodeList episodes={state}/>
+        <EpisodeList locations={state}/>
         </Stack>
     )
 }

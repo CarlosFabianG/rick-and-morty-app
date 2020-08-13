@@ -5,16 +5,23 @@ import { ThemeProvider, CSSReset } from '@chakra-ui/core'
 import theme from './theme'
 import Router from './Router'
 import './index.css'
-import App from './App'
+
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import reducers from './reducers'
 import * as serviceWorker from './serviceWorker'
 
+const store = createStore(reducers)
+
 ReactDOM.render(
+  <Provider store={store}>
   <BrowserRouter>
     <ThemeProvider theme={theme}>
     <CSSReset />
         <Router />
     </ThemeProvider>
-  </BrowserRouter>,
+  </BrowserRouter>
+  </Provider>,
   document.getElementById('root')
 )
 
