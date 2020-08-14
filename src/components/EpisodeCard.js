@@ -13,9 +13,9 @@ function EpisodeCard(props) {
           p={4} 
           color="green.200"
           direction="column">
- <Flex >{props.episodes.name}</Flex> 
- <Flex color="gray.500" fontSize="sm">{props.episodes.air_date}</Flex> 
-</Flex>
+      <Flex >{props.episodes.name}</Flex> 
+      <Flex color="gray.500" fontSize="sm">{props.episodes.air_date}</Flex> 
+    </Flex>
   )
 }
 

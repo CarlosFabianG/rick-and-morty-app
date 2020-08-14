@@ -5,7 +5,10 @@ import CharacterList from '../../components/CharacterList'
 import EpisodeList from '../../components/EpisodeList'
 import SearchBar from '../../components/SearchBar'
 import axios from 'axios'
+import { connect } from 'react-redux'
 const baseUrl = 'https://rickandmortyapi.com/api/'
+
+
 
 class Home extends Component{
     state = {
@@ -54,4 +57,11 @@ color="white"
     }
 }
 
-export default Home
+function mapStateToProps(state,props){
+    return {
+        recentCharacters: state.recentCharacters,
+        recentEpisodes: state.recentEpisodes
+    }
+}
+
+export default connect(mapStateToProps, null)(Home)

@@ -11,7 +11,12 @@ import { Provider } from 'react-redux'
 import reducers from './reducers'
 import * as serviceWorker from './serviceWorker'
 
-const store = createStore(reducers)
+const initialState = {
+      recentCharacters: [],
+      recentEpisodes: []
+}
+
+const store = createStore(reducers, initialState)
 
 ReactDOM.render(
   <Provider store={store}>
