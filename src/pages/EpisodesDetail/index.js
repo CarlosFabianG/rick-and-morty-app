@@ -1,9 +1,18 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { Flex, Text, Box } from "@chakra-ui/core"
 import axios from 'axios'
 const baseUrl = 'https://rickandmortyapi.com/api/episodes/'
 
-const EpisodesDetail = () => {
+const EpisodesDetail = (props) => {
+    const {id} = props.match.params
+    const [detail, setDetail] = useState({})
+
+    useEffect( () => {
+        axios.get(`${baseUrl}${id}`)
+        .then(res => setDetail(res.data))
+        .catch( err => console.eroor(err))
+    }, [])
+
     return(
         <>
           <Flex
@@ -20,15 +29,15 @@ const EpisodesDetail = () => {
                 mt="20vh">
                 <Text color="white">
                     <Box as="span" fontWeight="bold">Name:</Box>
-                    
+                    {detail.name}
                 </Text>
                 <Text color="green.200">
-                    <Box as="span" fontWeight="bold">Type:</Box>
-                    
+                    <Box as="span" fontWeight="bold">Air Date:</Box>
+                    {detail.air_date}
                 </Text>
                 <Text color="white">
-                    <Box as="span" fontWeight="bold">Dimension:</Box>
-                    
+                    <Box as="span" fontWeight="bold">Episode:</Box>
+                   {detail.episode} 
                 </Text>
            </Box>
            
