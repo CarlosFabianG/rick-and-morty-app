@@ -69,8 +69,8 @@ class CharacterDetail extends Component {
                         Status: {this.state.characterInfo.status}
                     </Badge>
             </Flex>
-        </Flex>
-  </Stack>
+         </Flex>
+        </Stack>
         )
 
     }
