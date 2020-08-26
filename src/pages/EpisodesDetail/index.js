@@ -1,16 +1,20 @@
 import React, {useState, useEffect} from 'react'
 import { Flex, Text, Box } from "@chakra-ui/core"
 import axios from 'axios'
-const baseUrl = 'https://rickandmortyapi.com/api/episodes/'
+const baseUrl = 'https://rickandmortyapi.com/api/episode/'
 
 const EpisodesDetail = (props) => {
+    
+    const [detail, setDetail] = useState([])
     const {id} = props.match.params
-    const [detail, setDetail] = useState({})
+
+    const getEpisode = async () => {
+        const {data} = await axios.get(`${baseUrl}${id}`)
+        setDetail(data)
+    }
 
     useEffect( () => {
-        axios.get(`${baseUrl}${id}`)
-        .then(res => setDetail(res.data))
-        .catch( err => console.error(err))
+        getEpisode()
     }, [])
 
     return(
