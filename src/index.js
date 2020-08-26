@@ -6,17 +6,11 @@ import theme from './theme'
 import Router from './Router'
 import './index.css'
 
-import { createStore } from 'redux'
+import { store } from './store/store'
 import { Provider } from 'react-redux'
-import reducers from './reducers'
+
 import * as serviceWorker from './serviceWorker'
 
-const initialState = {
-      recentCharacters: [],
-      recentEpisodes: []
-}
-
-const store = createStore(reducers, initialState)
 
 ReactDOM.render(
   <Provider store={store}>
