@@ -10,7 +10,7 @@ const EpisodesDetail = (props) => {
     useEffect( () => {
         axios.get(`${baseUrl}${id}`)
         .then(res => setDetail(res.data))
-        .catch( err => console.eroor(err))
+        .catch( err => console.error(err))
     }, [])
 
     return(
