@@ -12,7 +12,6 @@ const baseUrl = 'https://rickandmortyapi.com/api/'
 
 class Home extends Component{
     state = {
-        recentCharacters: [],
         recentEpisodes: []
     }
 
@@ -41,7 +40,7 @@ color="white"
 mt="100px"
 color="white"
 >Last Characters</Text>
-{this.state.recentCharacters?<CharacterList characters={this.props.recentCharacters}/>:null}
+{this.props.recentCharacters?<CharacterList characters={this.props.recentCharacters}/>:null}
 <Link to={'/characters'}><Text color="white">See all characters</Text></Link>
 </Stack>
 </>
@@ -51,8 +50,7 @@ color="white"
 
 function mapStateToProps(state,props){
     return {
-        recentCharacters: state.recentCharacters,
-        recentEpisodes: state.recentEpisodes
+        recentCharacters: state.characters.array,
     }
 }
 

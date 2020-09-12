@@ -9,7 +9,7 @@ const GET_CHARACTERS_SUCCESS = 'GET_CHARACTERS_SUCCES'
 
 const initialState = {
     loading: false,
-    characters: []
+    array: []
 }
 
 
@@ -25,7 +25,7 @@ export const charsReducer = (state = initialState, action) => {
             return {
                 ...state,
                 loading: false,
-                characters: action.payload
+                array: action.payload
             }
         default:
             return state
@@ -33,14 +33,21 @@ export const charsReducer = (state = initialState, action) => {
 }
 
 //action creators
-export const getCharactersAction = () => {
-    return (dispatch) => {
+export const getCharactersAction = () => (dispatch, getState) => {
+        dispatch({
+        type: GET_CHARACTERS
+        })
         return axios.get(URL)
           .then(res => {
               dispatch({
                   type: GET_CHARACTERS_SUCCESS,
                   payload: res.data.results
               })
-          }).catch(err => console.log(err))
+          }).catch(err => {
+            console.log(err)
+            dispatch({
+                type: GET_CHARACTERS_ERROR,
+                payload: err.response.message
+            })
+          })
     }
-}

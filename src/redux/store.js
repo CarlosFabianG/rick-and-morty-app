@@ -8,13 +8,24 @@ export const reducers = combineReducers({
     characters: charsReducer
 })
 
-export const generateStore = () => {
+/*
+export const store = createStore(
+        reducers, 
+        composeEnhancers(
+            applyMiddleware(thunk)
+            )
+        )
+        */
+
+export default function generateStore() {
     const store = createStore(
         reducers, 
         composeEnhancers(
             applyMiddleware(thunk)
             )
         )
-        getCharactersAction()(store.dispatch)
+        getCharactersAction()(store.dispatch, store.getState)
         return store
 }
+        
+     
