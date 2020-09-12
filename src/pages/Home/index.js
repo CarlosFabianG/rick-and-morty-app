@@ -16,20 +16,12 @@ class Home extends Component{
         recentEpisodes: []
     }
 
-async getCharacters(){
-   const data = await axios.get(`${baseUrl}/character`)
-    console.log(data)
-   this.setState({recentCharacters: data.data.results})
-   console.log(this.state.recentCharacters)
-}
-
 async getLastEpisodes(){
    const data = await axios.get(`${baseUrl}/episode`) 
    this.setState({recentEpisodes: data.data.results}) 
 }
 
 componentDidMount(){
-    this.getCharacters()
     this.getLastEpisodes()
 }
    
@@ -49,7 +41,7 @@ color="white"
 mt="100px"
 color="white"
 >Last Characters</Text>
-{this.state.recentCharacters?<CharacterList characters={this.state.recentCharacters}/>:null}
+{this.state.recentCharacters?<CharacterList characters={this.props.recentCharacters}/>:null}
 <Link to={'/characters'}><Text color="white">See all characters</Text></Link>
 </Stack>
 </>

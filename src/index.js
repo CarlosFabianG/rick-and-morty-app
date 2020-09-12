@@ -6,14 +6,14 @@ import theme from './theme'
 import Router from './Router'
 import './index.css'
 
-import { store } from './store/store'
+import { generateStore } from './redux/store'
 import { Provider } from 'react-redux'
 
 import * as serviceWorker from './serviceWorker'
 
 
 ReactDOM.render(
-  <Provider store={store}>
+  <Provider store={generateStore}>
   <BrowserRouter>
     <ThemeProvider theme={theme}>
     <CSSReset />
