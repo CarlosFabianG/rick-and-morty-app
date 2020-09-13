@@ -27,24 +27,24 @@ componentDidMount(){
     render(){
 return (
     <>
-<Stack 
-w="100vw"
-bg="yankeesblue.100"
->
-< SearchBar />
-< Text
-color="white"
->Last Episodes</Text>
-< EpisodeList episodes={this.state.recentEpisodes}/>
-< Text
-mt="100px"
-color="white"
->Last Characters</Text>
-{this.props.recentCharacters?<CharacterList characters={this.props.recentCharacters}/>:null}
-<Link to={'/characters'}><Text color="white">See all characters</Text></Link>
-</Stack>
-</>
-)
+    <Stack 
+    w="100vw"
+    bg="yankeesblue.100"
+    >
+        < SearchBar />
+        < Text
+        color="white"
+        >Last Episodes</Text>
+        < EpisodeList episodes={this.state.recentEpisodes}/>
+        < Text
+        mt="100px"
+        color="white"
+        >Last Characters</Text>
+            {this.props.recentCharacters?<CharacterList characters={this.props.recentCharacters}/>:null}
+        <Link to={'/characters'}><Text color="white">See all characters</Text></Link>
+    </Stack>
+    </>
+        )
     }
 }
 

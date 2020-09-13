@@ -4,23 +4,30 @@ import { Stack, Button, Spinner, Flex } from "@chakra-ui/core"
 import EpisodeList from '../../components/EpisodeList'
 import SearchBar from '../../components/SearchBar'
 import axios from 'axios'
+import { connect } from 'react-redux'
+import { getEpisodesAction } from '../../redux/episodesDuck'
 const baseUrl = 'https://rickandmortyapi.com/api/'
 
 
-const Episodes = () => {
-    const [episodes, setEpisodes] = useState([])
+const Episodes = ({episodes}) => {
+    //const [episodes, setEpisodes] = useState([])
     const [loading, setLoading] = useState(true)
    
-
+/*
     const  getAllEpisodes = async () => {
         setLoading(false)
         const {data} = await axios.get(`${baseUrl}episode`)
         console.log(data) 
         setEpisodes(data.results) 
      }
+     */
 
+     const getEpisodes = () => {
+        setLoading(false)
+        getEpisodesAction()
+     }
      useEffect(() => {
-        getAllEpisodes()
+        getEpisodesAction(episodes)
      },[])
   
     return (
@@ -43,5 +50,10 @@ const Episodes = () => {
     )
     }
     
+    const mapStateToProps = (state, props) => {
+        return{
+            episodes: state.episodes.array
+        }
+    }
 
-export default Episodes
+export default connect(mapStateToProps, {getEpisodesAction})(Episodes)
