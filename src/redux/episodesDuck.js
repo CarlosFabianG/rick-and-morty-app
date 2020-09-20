@@ -47,5 +47,4 @@ export const getEpisodesAction = () => (dispatch, getState) => {
            loading: false,
            payload: err
        }))
-       
 }
