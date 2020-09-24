@@ -46,5 +46,6 @@ export const getEpisodesAction = () => (dispatch, getState) => {
        }).catch(err => dispatch({
            loading: false,
            payload: err
+           
        }))
 }
